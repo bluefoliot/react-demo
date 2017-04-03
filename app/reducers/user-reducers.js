@@ -1,7 +1,8 @@
 import * as types from '../actions/action-types';
 
 const initialState={
-    userList: []
+    userList: [],
+    userId : ''
 };
 
 const userReducer = (state = initialState, action) => {
@@ -9,6 +10,10 @@ const userReducer = (state = initialState, action) => {
         case types.UPDATE_USER_LIST:
             return Object.assign({}, state, {
                 userList: action.userList
+            });
+        case types.UPDATE_USER_ID:
+            return Object.assign({}, state, {
+                userId: action.userId
             });
         }
     return state;

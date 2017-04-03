@@ -6,3 +6,10 @@ export function updateUserList(userList){
         userList
     };
 }
+
+export function updateUserId(userId){
+    return{
+        type: types.UPDATE_USER_ID,
+        userId
+    };
+}

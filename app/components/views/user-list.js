@@ -4,14 +4,15 @@ class UserList extends React.Component{
 
     render(){
         let users = [];
-        this.props.userList.forEach(user => {
-            users.push(<p> {user['name']}</p>);
+        users.push(<option key={-1}> - Select user - </option>);
+        this.props.userList.forEach((user, index) => {
+            users.push(<option key={index} value={user['id']}> {user['name']}</option>);
         });
 
         return (
-            <div>
+            <select className="selectpicker">
                 {users}
-            </div>
+            </select>
         );
     }
 }

@@ -1,13 +1,14 @@
 import React from 'react';
-import store from '../../store';
 import {connect} from 'react-redux';
-import * as userApi from '../../api/user-api';
+import * as commonApi from '../../api/common-api';
 import UserList from '../views/user-list';
 
 const UserListContainer = React.createClass({
     componentDidMount: function() {
-        store.dispatch(userApi.loadUserList());
+        this.props.dispatch(commonApi.loadUserList());
     },
+
+    
 
     render: function() {
         return (
