@@ -61,8 +61,8 @@ const ContentContainer = React.createClass({
 
 const mapStateToProps = store => {
     return {
-        postList: store.postState.postList,
-        todoList: store.todoState.todoList,
+        postList: store.contentState.postList,
+        todoList: store.contentState.todoList,
         userId: store.userState.userId
     };
 }

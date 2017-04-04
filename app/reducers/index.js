@@ -2,13 +2,11 @@ import { combineReducers } from 'redux';
 
 //Reducers
 import userReducer from './user-reducers';
-import postReducer from './post-reducers';
-import todoReducer from './todo-reducers';
+import contentReducer from './content-reducers';
 
 var reducers = combineReducers({
         userState: userReducer,
-        postState: postReducer,
-        todoState: todoReducer
+        contentState: contentReducer
     });
 
 export default reducers;

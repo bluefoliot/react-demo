@@ -2,21 +2,22 @@ import * as types from '../actions/action-types';
 
 const initialState={
     postList: [],
-    postId : ''
+    todoList: [],
+    albumList: []
 };
 
-const postReducer = (state = initialState, action) => {
+const contentReducer = (state = initialState, action) => {
     switch(action.type){
         case types.UPDATE_POST_LIST:
             return Object.assign({}, state, {
                 postList: action.postList
             });
-        case types.UPDATE_POST_ID:
+        case types.UPDATE_TODO_LIST:
             return Object.assign({}, state, {
-                postId: action.postId
+                todoList: action.todoList
             });
-        }
+    }
     return state;
 }
 
-export default postReducer;
+export default contentReducer;
