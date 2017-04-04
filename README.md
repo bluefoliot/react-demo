@@ -11,4 +11,4 @@ Clone this repo and run these commands
     bower install
     grunt
 
-> The server should be available at localhost:8003
+The server should be available at localhost:8003
