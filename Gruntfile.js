@@ -1,4 +1,5 @@
 'use strict';
+var rewrite = require('connect-modrewrite');
 
 module.exports = function (grunt) {
     grunt.initConfig({
@@ -21,7 +22,8 @@ module.exports = function (grunt) {
 
             dev:{
                 options:{
-                    watch: true
+                    watch: true,
+                    livereload: true
                 },
                 files: {
                   "js/bundle.js": ["app/*.js"]
@@ -65,7 +67,16 @@ module.exports = function (grunt) {
             server: {
                 options: {
                     port: 8003,
-                    base: ''
+                    base: '',
+                    // http://danburzo.ro/grunt/chapters/server/
+                    middleware: function(connect, options, middlewares) {
+                        // 1. mod-rewrite behavior
+                        var rules = [
+                            '!\\.html|\\.js|\\.css|\\.svg|\\.jp(e?)g|\\.png|\\.gif$ /index.html'
+                        ];
+                        middlewares.unshift(rewrite(rules));
+                        return middlewares;
+                      }
                 }
             }
         }

@@ -10,7 +10,7 @@ class UserList extends React.Component{
         });
 
         return (
-            <select className="selectpicker">
+            <select value={this.props.params.userId} onChange={this.props.changeUser}>
                 {users}
             </select>
         );

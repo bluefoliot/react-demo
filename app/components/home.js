@@ -8,20 +8,9 @@ const Home = React.createClass({
                     <h1>React Demo</h1>
                     <label>Select user: </label> {this.props.userList}
                 </div>
-                <nav className="navbar navbar-inverse">
-                    <div className="container-fluid">
-                        <div className="collapse navbar-collapse" id="myNavbar">
-                            <ul className="nav navbar-nav">
-                                <li className="active"><a href="#">Home</a></li>
-                                <li><a href="#">Products</a></li>
-                                <li><a href="#">Deals</a></li>
-                                <li><a href="#">Stores</a></li>
-                                <li><a href="#">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    </nav>
+                {this.props.navTab}
                 <div className="container">
+                    {this.props.content}
                 </div>
             </div>
         );
