@@ -16,6 +16,9 @@ class NavTab extends React.Component{
                             <LinkContainer to={'/'+this.props.params.userId+'/todo'}>
                                 <NavItem>Todo</NavItem>
                             </LinkContainer>
+                            <LinkContainer to={'/'+this.props.params.userId+'/album'}>
+                                <NavItem>Album</NavItem>
+                            </LinkContainer>
                         </ul>
                     </div>
                 </div>

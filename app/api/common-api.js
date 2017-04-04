@@ -41,3 +41,13 @@ export function loadTodoListByUser(userId){
         });
     }
 }
+
+export function loadAlbumListByUser(userId){
+    return dispatch => {
+        getApi('users', userId, 'albums')
+        .then(response => {
+            dispatch(userActions.updateUserId(userId))
+            dispatch(contentActions.updateAlbumList(response.data))
+        });
+    }
+}

@@ -13,3 +13,10 @@ export function updateTodoList(todoList){
         todoList
     };
 }
+
+export function updateAlbumList(albumList){
+    return {
+        type: types.UPDATE_ALBUM_LIST,
+        albumList
+    };
+}

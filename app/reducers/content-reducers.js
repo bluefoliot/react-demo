@@ -16,6 +16,10 @@ const contentReducer = (state = initialState, action) => {
             return Object.assign({}, state, {
                 todoList: action.todoList
             });
+        case types.UPDATE_ALBUM_LIST:
+            return Object.assign({}, state, {
+                albumList: action.albumList
+            });
     }
     return state;
 }

@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import * as commonApi from '../../api/common-api';
 import PostList from '../views/post-list';
 import TodoList from '../views/todo-list';
+import AlbumList from '../views/album-list';
 import * as constant from '../../constant';
 
 const ContentContainer = React.createClass({
@@ -35,6 +36,8 @@ const ContentContainer = React.createClass({
                 return <PostList {...this.props} />;
             case constant.CONTENT_TODO:
                 return <TodoList {...this.props} />;
+            case constant.CONTENT_ALBUM:
+                return <AlbumList {...this.props} />;
         }
         return '';
     },
@@ -46,6 +49,8 @@ const ContentContainer = React.createClass({
                 return commonApi.loadPostListByUser(userId);
             case constant.CONTENT_TODO:
                 return commonApi.loadTodoListByUser(userId);
+            case constant.CONTENT_ALBUM:
+                return commonApi.loadAlbumListByUser(userId);
         }
     },
 
@@ -63,6 +68,7 @@ const mapStateToProps = store => {
     return {
         postList: store.contentState.postList,
         todoList: store.contentState.todoList,
+        albumList: store.contentState.albumList,
         userId: store.userState.userId
     };
 }
